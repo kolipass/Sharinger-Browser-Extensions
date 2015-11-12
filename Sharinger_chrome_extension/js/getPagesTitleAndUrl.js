@@ -4,7 +4,7 @@
 function DOMtoData(document_root) {
     var data = {
         url: document_root.location.href,
-        message: document.title +" "+ document_root.location.href
+        message: document.title
     }
 
     return data;

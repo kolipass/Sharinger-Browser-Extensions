@@ -1,6 +1,10 @@
 #social-sharing {
     text-align: center;
 }
+#markdown {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
 
 [data-service] {
     display: inline-block;

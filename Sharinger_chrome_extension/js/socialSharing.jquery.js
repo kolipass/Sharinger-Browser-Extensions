@@ -103,4 +103,16 @@
 
         jQuery('#social-sharing').show(300);
     }
+    
+    window.initMarkDown= function(url, title) {
+        jQuery('#markdown')
+			.html('')
+			.append('<button class="markdowng">To markdown</div>')
+			.click(function () { 
+				copyTextToClipboard("["+title +"]("+ url+")");
+			});
+
+
+        jQuery('#markdown').show(300);
+    }
 })(jQuery);

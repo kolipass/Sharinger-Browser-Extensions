@@ -1,8 +1,11 @@
 chrome.extension.onMessage.addListener(function(request, sender) {
   if (request.action == "getSource") {
-    message.innerText ="Copied: "+ request.source.message;
-    copyTextToClipboard(request.source.message);
-    initSocialSharing(request.source.url, 'Sharing', request.source.message, request.source.message);
+    var titleAndBody = request.source.message + ' ' +request.source.url;
+    
+    message.innerText ="Copied: "+ titleAndBody;
+    copyTextToClipboard(titleAndBody);
+    initSocialSharing(request.source.url, 'Sharing', titleAndBody, titleAndBody);
+    initMarkDown(request.source.url, request.source.message);
   }
 });
 
@@ -18,7 +21,6 @@ function onWindowLoad() {
       message.innerText = 'There was an error injecting script : \n' + chrome.extension.lastError.message;
     }
   });
-
 }
 
 function copyTextToClipboard(text) {
