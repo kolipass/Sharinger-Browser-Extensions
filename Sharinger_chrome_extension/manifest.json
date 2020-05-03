@@ -1,6 +1,6 @@
 {
     "name": "Sheringer - copy url with </title>",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Copy url with </title>",
     "icons": {
@@ -13,7 +13,6 @@
         "default_popup": "popup.html"
     },
     "permissions": [
-        "tabs",
-        "<all_urls>"
+        "activeTab"
     ]
 }
