@@ -1,18 +1,25 @@
 {
-    "name": "Sheringer - copy url with </title>",
-    "version": "1.1",
-    "manifest_version": 2,
+    "name": "Sharinger - copy url with </title>",
+    "version": "2.0",
+    "manifest_version": 3,
     "description": "Copy url with </title>",
     "icons": {
-        "19": "images/19.png",
-        "38": "images/38.png",
-        "128": "icon.png"
-    },
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      },
+      "action": {   
+        "default_popup": "popup/popup.html" 
+      },
+    "background": {
+      "service_worker": "js/service-worker.js"
     },
     "permissions": [
-        "activeTab"
-    ]
+        "activeTab", "clipboardWrite",  "scripting"
+    ],
+    "web_accessible_resources": [{
+      "resources": ["css/popup-style.css"],
+      "matches": ["<all_urls>"]
+    }]
 }
